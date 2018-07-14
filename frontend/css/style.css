@@ -1,0 +1,270 @@
+/*
+**
+**
+**
+**
+** General Styles */
+
+html,
+html > body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.top-bar,
+.sidebar,
+.content {
+    transition: .5s ease;
+}
+
+.sub-title { 
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.sub-title * {
+    margin: 0;
+    font-weight: normal;
+}
+
+/*
+**
+**
+**
+**
+** Helper Classes */
+
+.full-height {
+    height: 100%;
+}
+
+.relative {
+    position: relative;
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.padding-space {
+    padding: 30px 15px;
+}
+
+.default-bg-color {
+    background-color: rgba(7,11,14,.70); 
+}
+
+.gradient{
+    background: linear-gradient(to right, #ffc107 0%, #ffff99 100%);
+}
+
+.progress {
+    background-color: #1F1F21;
+    border-radius: 15px;
+}
+
+.box {
+    padding: 5px 10px;
+}
+
+.box p {
+    margin-bottom: 5px;
+}
+
+
+/*
+**
+**
+**
+**
+** Bootstrap Progress Bar */
+
+.progress-bar {
+    border-radius: 15px;
+}
+
+
+/*
+**
+**
+**
+**
+** Topbar */
+
+.top-bar {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(7,11,14,.45); 
+}
+
+#toggle-button {
+    font-size: 17px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 12.6px 15px;
+}
+
+/*
+**
+**
+**
+**
+** Sidebar */
+
+.sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(7,11,14,.60);
+}
+
+.sidebar .sidebar-logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 150px;
+    margin: auto;
+    
+}
+
+.sidebar .logo-user {
+    margin: 30px auto;
+}
+
+.sidebar .logo-user h5 {
+    font-weight: 300;
+    margin: 0;
+    
+}
+
+.sidebar-nav ul > li {
+    display: block;
+    margin: 5px 0;
+}
+
+.sidebar-nav ul > li > a {
+    display: inherit;
+    padding: 15px 30px;
+    transition: .5s ease;
+    background-color: rgba(7, 11, 14, .20);
+}
+
+.sidebar-nav ul > li.active > a,
+.sidebar-nav ul > li > a:hover {
+   background-color: rgba(7, 11, 14, .10);
+}
+
+.sidebar-nav ul > li .icons {
+    margin-right: 15px;
+}
+
+.sidebar-logout {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+}
+
+/*
+**
+**
+**
+**
+** Content */
+
+.content {
+    position: relative;
+    top: 0;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+.content-header {
+    background-color: rgba(7,11,14,.60);
+    padding: 10px 15px;
+}
+
+.content-header ul > li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.content-header ul > li:last-child {
+    margin-right: 0px;
+}
+
+
+@media (max-width: 1200px) {
+    
+    .responsive-page .sidebar,
+    .responsive-page .content {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+    
+    .responsive-page .top-bar {
+        top: 0px;
+    }
+    
+    .responsive-page .sidebar {
+        left: -300px;    
+    }
+    
+    .responsive-page.toggle-page .sidebar {
+        background-color: rgba(7,11,14,1);
+        left: 0px;
+        width: 100%;
+    }
+    
+    .responsive-page .sidebar .sidebar-nav {
+        max-width: 300px;
+        margin: auto;
+    }
+     
+    .responsive-page .content {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
