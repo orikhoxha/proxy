@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="common-header">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+<header th:fragment="common-topbar" class="top-bar">
+    <div class="text-right">
+            <span id="toggle-button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </span>
+    </div>
+</header>
+
+<!-- Sidebar -->
+<aside th:fragment="common-aside" class="sidebar full-height">
+
+    <!-- Logo + User -->
+    <div class="logo-user">
+        <div class="sidebar-logo">
+        </div>
+        <h5 class="text-center">Welcome, <span class="bold" th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
+    </div>
+
+    <!-- Sidebar Nav -->
+    <nav class="sidebar-nav">
+        <ul>
+            <li class="active">
+                <a th:href="@{/}">
+                    <img src="/images/icons/home-small.png" class="icons" alt="Home"> Home
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/profile}">
+                    <img src="/images/icons/profiles.png" class="icons" alt="Profiles"> Profiles
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/credits}">
+                    <img src="/images/icons/credit-small.png" class="icons" alt="Home"> Purchase Credit
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/hoursDataCenter}">
+                    <img src="/images/icons/hrs-small.png" class="icons" alt="Home"> Hours Datacenter
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/dataUsageResidential}">
+                    <img src="/images/icons/datausage-small.png" class="icons" alt="Home"> Data-usage Residental
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/twentyFourHoursResidential}">
+                    <img src="/images/icons/24-small.png" class="icons" alt="Home"> 24 Hours Residental
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/images/icons/nike-small.png" class="icons" alt="Home"> Nike Account
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/images/icons/close.png" class="icons" alt="Home"> BoostedX
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar Logout -->
+    <div class="sidebar-logout text-center">
+        <a th:href="@{/logout}">
+            <img src="/images/icons/logout.png" class="icons" alt="Logout"> Logout
+        </a>
+    </div>
+
+</aside>
+
+<!--<header th:fragment="common-head" class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <ul class="text-right">
+                    <li>
+                        <img src="/images/icons/credit-small.png" class="icons" alt="Credit"> <span>2150 credits</span>
+                    </li>
+                    <li>
+                        <span class="bold">C.EXP.</span> 01/20/19
+                    </li>
+                    <li>
+                        <img src="/images/icons/datausage-small.png" class="icons" alt="Datacenters"> <span class="bold">5.1 GB</span>
+                    </li>
+                    <li>
+                        <span class="bold">D.EXP.</span> 01/20/19
+                    </li>
+                    <li>
+                        <img src="/images/icons/hrs-small.png" class="icons" alt="Hrs"> <span class="bold">4 Hrs</span>
+                    </li>
+                    <li>
+                        <img src="/images/icons/24-small.png" class="icons" alt="24Hrs"> <span class="bold">0 Hrs</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>-->
+
+</body>
+</html>

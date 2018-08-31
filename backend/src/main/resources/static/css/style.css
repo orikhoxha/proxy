@@ -1,0 +1,608 @@
+/*
+**
+**
+**
+**
+** General Styles */
+
+html,
+html > body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.top-bar,
+.sidebar,
+.content {
+    transition: .5s ease;
+}
+
+.sub-title { 
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+
+.sub-title * {
+    margin: 0;
+    font-weight: normal;
+}
+
+::selection {
+  background: #f1c40f; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #f1c40f; /* Gecko Browsers */
+}
+
+
+/*
+**
+**
+**
+**
+** Custom Scroll Bar */
+
+::-webkit-scrollbar {
+    width:9px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:rgba(55,59,62,0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:rgba(55,59,62,1);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(55,59,62,0.05);
+}
+
+
+/*
+**
+**
+**
+**
+** Helper Classes */
+
+.full-height {
+    height: 100%;
+}
+
+.relative {
+    position: relative;
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.padding-space {
+    padding: 30px 15px;
+}
+
+.default-bg-color {
+    background-color: rgba(7,11,14,.70); 
+}
+
+.gradient {
+    background: linear-gradient(to right, #ffc107 0%, #ffff99 100%);
+}
+
+.progress {
+    background-color: #1F1F21;
+    border-radius: 15px;
+}
+
+.box {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.box p {
+    margin-bottom: 5px;
+}
+
+.select-custom {
+    background-color: #373B3E !important;
+    color: #fff !important;
+    border-radius: 0px;
+    border: none;
+    font-size: 14px;
+    height: 30px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-custom {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #f1c40f;
+    border-radius: 3px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 30px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.btn-effect {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn-effect:hover {
+  box-shadow: 0 0 40px 40px #f1c40f inset;
+}
+
+.info-input-field {
+    text-align: left;
+    font-size: 12px;
+}
+
+
+/* Orik added - warning text for input validation */
+.warning-text{
+    color: red;
+    text-align: left;
+    font-size: 12px;
+}
+
+.flex-style {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+}
+
+.list-btn-custom .btn-custom {
+    width: 95px;
+    padding: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.table.table-borderless td,
+.table.table-borderless th {
+    border-top: none;
+}
+
+.custom-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/*
+**
+**
+**
+**
+** Bootstrap Progress Bar */
+
+.progress-bar {
+    border-radius: 15px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+
+/*
+**
+**
+**
+**
+** Topbar */
+
+.top-bar {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(7,11,14,.45); 
+}
+
+#toggle-button {
+    font-size: 17px;
+    cursor: pointer;    
+    display: inline-block;
+    padding: 12.6px 15px;
+}
+
+.btn-bigger {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+/*
+**
+**
+**
+**
+** Sidebar */
+
+.sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(7,11,14,.60);
+}
+
+.sidebar .sidebar-logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 200px;
+    height: 150px;
+    margin: auto;
+    
+}
+
+.sidebar .logo-user {
+    margin: 30px auto;
+}
+
+.sidebar .logo-user h5 {
+    font-weight: 300;
+    margin: 0;
+    
+}
+
+.sidebar-nav ul > li {
+    display: block;
+    margin: 5px 0;
+}
+
+.sidebar-nav ul > li > a {
+    display: inherit;
+    padding: 15px 30px;
+    transition: .5s ease;
+    background-color: rgba(7, 11, 14, .20);
+}
+
+.sidebar-nav ul > li.active > a,
+.sidebar-nav ul > li > a:hover {
+   background-color: rgba(7, 11, 14, .10);
+}
+
+.sidebar-nav ul > li .icons {
+    margin-right: 15px;
+}
+
+.sidebar-logout {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+}
+
+/*
+**
+**
+**
+**
+** Content */
+
+.content {
+    position: relative;
+    top: 0;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+.content-header {
+    background-color: rgba(7,11,14,.60);
+    padding: 10px 15px;
+    margin-left: 3px;
+}
+
+.content-header ul > li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.content-header ul > li:last-child {
+    margin-right: 0px;
+}
+
+.content .board-data {
+    padding-top: 23.5px;
+    padding-bottom: 23.5px;
+}
+
+.content .circles-data p {
+    margin: 5px 0;
+}
+
+.content .content-form * {
+    margin-right: 15px;
+}
+
+.content .content-form .form-control {
+    background-color: #373B3E;
+    color: #fff;
+    border-radius: 0px;
+    border: none;
+    font-size: 14px;
+    height: 30px !important;
+    min-width: 190px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.content .content-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(55, 59, 62, .25);
+}
+
+.content .content-form .btn-custom {
+    margin-left: 30px;
+}
+
+.content .proxies .box {
+    min-height: 300px;
+    box-sizing: border-box;
+}
+
+.content .proxies .actions .btn-custom {
+    font-size: 12px;
+    margin: 5px 0px 5px 2.5px;
+    padding: 0 15px;
+}
+
+.content .proxies .actions .row {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.flex-align-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.custom-form-control {
+    background-color: #373B3E !important;
+    color: #fff !important;
+    border-radius: 0px;
+    border: none;
+    font-size: 14px;
+    height: 30px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.custom-form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(55, 59, 62, .25);
+}
+
+/*
+**
+**
+**
+**
+** Credit Content */
+
+.credit-content .credit-img {
+    margin: 0 auto 30px;
+}
+
+.credit-content .credit-img img {
+    margin: auto;
+}
+
+
+.img-fluid {
+    max-width: 227.3px;
+    height: auto;
+}
+
+.payments {
+    margin-top: 40px;
+    max-width: 272px;
+    height: 50px;
+}
+
+.credit-bg-color {
+    background-color: #040B13;    
+}
+
+.credit-space {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
+
+.total-price p {
+    font-size: 12px;
+    margin-bottom: 2.5px;
+}
+
+.total-price hr {
+    border-top-color: #fff;
+    margin: 2.5px 0;
+}
+
+.total-price-font p {
+    font-size: 14px;
+}
+
+.total-price form {
+    margin: 20px 0 40px;
+}
+
+.total-price .credit-form-btn {
+    margin-top: 20px;
+}
+
+/*
+**
+**
+**
+**
+** Login Page */
+
+#wrap {
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border: 1px solid transparent;
+}
+
+#wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 320px;
+}
+
+.login .logo img {
+    max-width: 100px;
+    margin: 10px auto 30px;
+}
+
+.login .form-group .fa {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+
+/* Orik added - custom font */
+.login .form-group .custom-font{
+    max-width: 14px;
+    max-height: 14px;
+    position: absolute;
+    top: 10px;
+    left: 15px
+}
+
+.login .form-control {
+    background-color: transparent;
+    border: none;
+    outline: 0px;
+    padding-left: 40px;
+    border-bottom: 1px solid #45576D;
+    color: #fff;
+}
+
+.login .form-control:focus {
+    border-color: #f1c40f;
+    box-shadow: none;
+}
+
+.login .login-btn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+@media (max-width: 1200px) {
+    
+    .responsive-page .sidebar,
+    .responsive-page .content {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+    
+    .responsive-page .top-bar {
+        top: 0px;
+    }
+    
+    .responsive-page .sidebar {
+        left: -300px;    
+    }
+    
+    .responsive-page.toggle-page .sidebar {
+        background-color: rgba(7,11,14,1);
+        left: 0px;
+        width: 100%;
+    }
+    
+    .responsive-page .sidebar .sidebar-nav {
+        max-width: 300px;
+        margin: auto;
+    }
+     
+    .responsive-page .content {
+        margin-left: 0px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!-- Common Header -->
+<head th:replace="common/header :: common-header" />
+<body class="page home-page responsive-page relative">
+
+<header class="top-bar">
+    <div class="text-right">
+            <span id="toggle-button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </span>
+    </div>
+</header>
+
+<!-- Common Aside -->
+<div th:replace="common/header :: common-aside"/>
+
+<!-- Content -->
+<main class="content full-height relative">
+
+    <div class="inner-content padding-space">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="content-title">
+                        <h2>24 Hours Residential</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-7">
+                    <form action="#" method="post">
+                        <div class="sub-title default-bg-color">
+                            <h6>Purchase</h6>
+                        </div>
+                        <div class="data box default-bg-color">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Proxies</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col flex-style list-btn-custom">
+                                        <button class="btn-custom btn-effect quantity" data-quantity="20">20 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="30">30 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="40">40 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="50">50 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="60">60 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="70">70 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="80">80 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="90">90 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="100">100 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="130">130 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="150">150 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="180">180 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="200">200 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="250">250 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="300">300 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="400">400 Proxies</button>
+                                        <button class="btn-custom btn-effect quantity" data-quantity="500">500 Proxies</button>
+                                        <input type="hidden" name="quantity" th:value="${proxies.quantity}" id="quantity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid mt-4 mb-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Region</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col flex-style list-btn-custom">
+                                        <button class="btn-custom btn-effect region" data-region="US">US</button>
+                                        <button class="btn-custom btn-effect region" data-region="UK">UK</button>
+                                        <button class="btn-custom btn-effect region" data-region="CA">CA</button>
+                                        <input type="hidden" name="quantity region" th:value="${proxies.region}" id="region">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid mt-4 authorization pb-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Authorization</h6>
+                                        <div class="form-group">
+                                            <div class="row flex-align-center">
+                                                <div class="col-xl-2 pr-0">
+                                                    <label for="" class="m-0">Ip Address:</label>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" name="ipAddress" id="ipAddress" th:value="${proxies.ipAddress}" class="form-control custom-form-control w-50">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="m-0">(IP authorize can be change after purchase)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="row col flex-align-center">
+                                                <label for="" class="mb-0 mr-3">User: </label>
+                                                <input type="text" id="proxyUser" name="proxyUser" th:value="${proxies.proxyUser}" class="form-control custom-form-control w-25">
+
+                                                <label for="" class="mb-0 ml-4 mr-3">Password: </label>
+                                                <input type="password" id="proxyPassword" name="proxyPassword" th:value="${proxies.proxyPassword}" class="form-control custom-form-control w-25">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="m-0">(User and Password is fixed until time up)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-title default-bg-color">
+                            <h6>Total</h6>
+                        </div>
+
+                        <div class="data box default-bg-color">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <p>Proxies + 20 GB + US</p>
+                                    <h1>4410 credits</h1>
+                                </div>
+                                <div class="col-xl-6 text-right">
+                                    <div class="form-check">
+                                        <!--<input type="checkbox" class="form-check-input" id="">-->
+                                        <label class="form-check-label" for="exampleCheck1">All Purchase are final.</label>
+                                    </div>
+                                    <button type="submit" class="btn-custom btn-effect btn-bigger mt-2">Purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-5">
+                    <div class="sub-title default-bg-color">
+                        <h6>Proxies Status</h6>
+                    </div>
+
+                    <div class="data box default-bg-color">
+                        <form action="">
+                            <div class="container-fluid">
+                                <div class="row flex-align-center">
+                                    <div class="col-xl-4">
+                                        <label for="" class="m-0">Hours Remain</label>
+                                    </div>
+                                    <div class="col">
+                                        <select name="" id="" class="form-control select-custom w-50">
+                                            <option value="">Options...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mb-2">
+                                    <div class="col-1">
+                                        <label for="" class="m-0">10</label>
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="progress">
+                                            <div class="progress-bar gradient" style="width:70%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 text-right">
+                                        <label for="" class="m-0">24</label>
+                                    </div>
+                                </div>
+                                <div class="row flex-align-center">
+                                    <!--<div class="col-xl-3">
+                                        <label for="" class="m-0">IP Authorize:</label>
+                                    </div>-->
+                                    <div class="col-xl-5">
+                                        <input type="text" placeholder="IP Authorize" class="form-control custom-form-control">
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <select name="" id="" class="form-control select-custom ">
+                                            <option value="">Region...</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <button type="submit" class="btn-custom btn-effect">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="data box default-bg-color">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="custom-list">
+                                        <p>US</p>
+                                        <ul>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                        </ul>
+
+                                        <p>UK</p>
+                                        <ul>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                            <li>35.193.62.3128:boosted:24f22413</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row flex-align-center mt-4">
+                                <div class="col-xl-5">
+                                    <label for="" class="m-0"><small>Authorized : USER: PASS</small></label>
+                                </div>
+                                <div class="col-xl-7">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <select name="" id="" class="form-control select-custom">
+                                                <option value="">Options...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn-custom btn-effect mt-1">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Common Footer -->
+<div th:replace="common/footer :: common-footer"/>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!-- Common Header -->
+<head th:replace="common/header :: common-header" />
+
+</head>
+<body class="page home-page responsive-page relative">
+
+
+<!-- Common Topbar -->
+<div th:replace="common/header :: common-topbar"/>
+
+<!-- Common Aside -->
+<div th:replace="common/header :: common-aside"/>
+
+
+
+<!-- Content -->
+<main class="content full-height relative">
+    <!-- Content Header -->
+    <!-- Common Header -->
+    <!--<head th:replace="common/header :: common-head" />-->
+
+    <div class="inner-content padding-space">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="statistics">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="sub-title default-bg-color">
+                                    <h6>Status</h6>
+                                </div>
+                                <div class="data box default-bg-color board-data">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <p>Remaining Credit:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <p>2150</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <p>Remain Resi. Data (GB):</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p>5.1</p>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="progress">
+                                                        <div class="progress-bar gradient" style="width:70%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p>20</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <p>Remain Resi.24 Hrs (Hr):</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p>5.1</p>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="progress">
+                                                        <div class="progress-bar gradient" style="width:50%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p>20</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <p>Remain DC. Hrs (Hr):</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p>5.1</p>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="progress">
+                                                        <div class="progress-bar gradient" style="width:90%"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <p>20</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="sub-title default-bg-color">
+                                    <h6>Expire</h6>
+                                </div>
+                                <div class="data box default-bg-color circles-data">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <div class="text-center">
+                                                <div id="circle-1" class="circle relative"></div>
+                                                <p>RESI. DATA</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <div class="text-center">
+                                                <div id="circle-2" class="circle relative"></div>
+                                                <p>Resi. 24 HRS</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <div class="text-center">
+                                                <div id="circle-3" class="circle relative"></div>
+                                                <p>DC HRS</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="sub-title default-bg-color">
+                        <h6>Authorization</h6>
+                    </div>
+                    <div class="data box default-bg-color">
+                        <form class="form-inline content-form">
+                            <label for="">Type of Proxies: </label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Options</option>
+                                <option value="1">1</option>
+                            </select>
+
+                            <label for="">Change Authorization: </label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Options</option>
+                                <option value="1">1</option>
+                            </select>
+
+                            <label for="">IP: </label>
+                            <input type="text" class="form-control">
+
+                            <button type="submit" class="btn-custom btn-effect">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row proxies">
+                <div class="col-sm-4">
+                    <div class="sub-title default-bg-color">
+                        <p>Hours Datacenter Proxies</p>
+                    </div>
+                    <div class="data box default-bg-color relative">
+                        <div class="actions">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <p>Authorized : USER: PASS</p>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="text-right">
+                                        <button class="btn-custom btn-effect">
+                                            Hightlight
+                                        </button>
+                                        <button class="btn-custom btn-effect">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="sub-title default-bg-color">
+                        <p>Hours Datacenter Proxies</p>
+                    </div>
+                    <div class="data box default-bg-color relative">
+                        <div class="actions">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <p>Authorized : 123.44.55</p>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="text-right">
+                                        <button class="btn-custom btn-effect">
+                                            Hightlight
+                                        </button>
+                                        <button class="btn-custom btn-effect">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="sub-title default-bg-color">
+                        <p>Hours Datacenter Proxies</p>
+                    </div>
+                    <div class="data box default-bg-color relative">
+                        <div class="actions">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <p>Authorized : N/A</p>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="text-right">
+                                        <button class="btn-custom btn-effect">
+                                            Hightlight
+                                        </button>
+                                        <button class="btn-custom btn-effect">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Common Footer -->
+<div th:replace="common/footer :: common-footer"/>
+
+</body>
+</html>

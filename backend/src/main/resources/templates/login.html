@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Login</title>
+</head>
+<body class="page login-page responsive-page relative">
+
+
+<div id="wrap" class="relative">
+    <div id="waves"></div>
+</div>
+
+<div class="login text-center">
+    <div class="logo text-center">
+        <img src="/images/logo.png" alt="Logo">
+    </div>
+
+
+
+    <div class="login-form">
+        <div th:if="${successful_register}" class="alert alert-primary" role="alert">
+            Successfully registered!
+        </div>
+        <form id="login-form" th:action="@{/login}" method="post">
+            <div class="form-group relative">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <input type="text" id="username" name="username" class="form-control" placeholder="username">
+            </div>
+            <div class="form-group relative">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" name="password" class="form-control" placeholder="password">
+            </div>
+
+            <div class="text-center login-btn">
+                <button type="submit" class="btn-custom btn-effect">Submit</button>
+            </div>
+
+            <div class="form-info">
+                <p>
+                    <a href="javascript:{}" id="forgot-password" data-target="forgot-password-form">Forgot Password</a> <br>
+                    <a href="javascript:{}" id="new-account" data-target="register-form">New Account</a>
+                </p>
+            </div>
+
+        </form>
+
+        <form th:action="@{/register}" method="post" id="register-form" style="display: none;">
+            <div class="form-group relative">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <input type="text" id="username" name="username" class="form-control" th:value="${user.username}" placeholder="username">
+            </div>
+            <div class="form-group relative">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" id="password" name="password" class="form-control"th:value="${user.password}" placeholder="password">
+                <p class='info-input-field password'>Use 8 or more characters with a mix of letters, numbers &amp; symbols</p>
+            </div>
+            <div class="form-group relative">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" id="retype-password" class="form-control" placeholder="re-type password">
+            </div>
+            <div class="form-group relative">
+                <img src="images/icons/first24x24.png" class="custom-font" alt="">
+                <input type="text" class="form-control" name="firstName" th:value="${user.firstName}" id="firstName" placeholder="first name">
+            </div>
+            <div class="form-group relative">
+                <img src="/images/icons/last24x24.png" class="custom-font" alt="">
+                <input type="text" class="form-control" th:value="${user.lastName}" name="lastName" id="lastName" placeholder="last name">
+            </div>
+            <div class="form-group relative">
+                <i class="fa fa-at" aria-hidden="true"></i>
+                <input type="email" class="form-control" name="email" th:value="${user.email}" id="email" placeholder="email">
+            </div>
+            <div class="form-group relative">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <input type="text" class="form-control" name="twitterAccount" th:value="${user.twitterAccount}" placeholder="twitter">
+                <p class="info-input-field">Any issue will be contact customer on twitter</p>
+            </div>
+            <div class="text-center login-btn">
+                <button type="submit" class="btn-custom btn-effect">Sign Up</button>
+            </div>
+        </form>
+
+        <form action="" id="forgot-password-form" style="display: none;">
+            <div class="form-group relative">
+                <i class="fa fa-at" aria-hidden="true"></i>
+                <input type="email" class="form-control" id="emailRecover" placeholder="Email address to recover">
+            </div>
+            <div class="text-center login-btn">
+                <button type="submit" class="btn-custom btn-effect">Reset password</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Progress Bar -->
+<script src="js/progressbar.min.js"></script>
+<!-- Three js -->
+<script src="https://threejs.org/build/three.js"></script>
+<!-- Canvas Renderer -->
+<script src="https://threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+<!-- Projector -->
+<script src="https://threejs.org/examples/js/renderers/Projector.js"></script>
+<!-- Main JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
