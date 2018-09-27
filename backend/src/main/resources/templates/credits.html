@@ -3,6 +3,7 @@
 
   <!-- Common Header -->
   <head th:replace="common/header :: common-header"/>
+	
 
   <body class="page home-page responsive-page relative">
 
@@ -18,6 +19,10 @@
         <!--<head th:replace="common/header :: common-head" />-->
         
         <div class="inner-content padding-space credit-content">
+        	<input type="hidden" id="total_amount" name="total_amount" value="0"/>
+        	<input type="hidden" id="product_credit" name="product_credit" value="0"/>
+        	
+        	
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-9">
@@ -159,9 +164,21 @@
                                                 </div>
                                             </div>
                                             <div class="text-right credit-form-btn">
-                                                <button class="btn-custom btn-effect">Purchase</button>
+                                                <button id="purchaseButton" class="btn-custom btn-effect" type="button">Purchase</button>
                                             </div>
                                         </form>
+                                        <!-- <form action="your-server-side-code" method="POST">
+										  <script
+										    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+										    data-key="pk_test_GiSWrVvNWrr0wBHsaKe7DcJH"
+										    data-amount="999"
+										    data-name="Proxy Backend"
+										    data-description="Example charge"
+										    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+										    data-locale="auto">
+										  </script>
+										</form>  --> 
+                                        
                                     </div>
                                 </div>
                                 
@@ -184,5 +201,37 @@
 
     <!-- Common Footer -->
     <div th:replace="common/footer :: common-footer"/>
+  
   </body>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+	<script>
+	var handler = StripeCheckout.configure({
+	  key: 'pk_test_GiSWrVvNWrr0wBHsaKe7DcJH',
+	  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+	  locale: 'auto',
+	  token: function(token) {
+		  alert("Thank you for purchasing credit, You will be contacted in 24 hours.");
+	    // You can access the token ID with `token.id`.
+	    // Get the token ID to your server-side code for use.
+	  }
+	});
+
+
+	document.getElementById("purchaseButton").addEventListener("click", function() {
+		handler.open({
+			    name: 'Proxy Backend',
+			    description: 'Credit: ' + $("#product_credit").val(),
+			    amount: $("#total_amount").val() + '00',
+			    currency: 'usd'
+			  });
+	});
+	
+
+
+	// Close Checkout on page navigation:
+	window.addEventListener('popstate', function() {
+	  handler.close();
+	});
+</script>
+
 </html>
