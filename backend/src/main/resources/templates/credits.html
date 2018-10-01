@@ -210,9 +210,11 @@
 	  locale: 'auto',
 	  token: function(token) {
 		  $.post( "/credits/payment", {'stripeToken': token.id, 'amount': $("#total_amount").val(), 'desc': 'Credit: ' + $("#product_credit").val()})
-		  .done(function(msg){ alert("Message : "+ token.card.name +", YOU WILL BE CONTACTED within 24HRS" ); })
+		  .done(function(msg){ 
+			  swal("Payment Successfull!", token.card.name +"\n YOU WILL BE CONTACTED within 24HRS", "success");
+		  	})
     	  .fail(function(xhr, status, error) {
-    		  alert("Error: " + error);
+			  swal("Error!", error, "error");
 	    });
 		  
 		  
