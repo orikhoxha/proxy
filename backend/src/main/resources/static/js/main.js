@@ -77,7 +77,7 @@ $(document).ready(function(){
                 console.log("cheating");
                 return;
             }
-            $(".subtotal").html(pretifyNum(credit)); 
+            $(".subtotal").html(credit + ' Credits'); 
             $(".total").html(pretifyNum(credit/10));
             $("#total_amount").val(credit/10);
             $("#product_credit").val(credit);
