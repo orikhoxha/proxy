@@ -21,8 +21,7 @@
         <div class="inner-content padding-space credit-content">
         	<input type="hidden" id="total_amount" name="total_amount" value="0"/>
         	<input type="hidden" id="product_credit" name="product_credit" value="0"/>
-        	
-        	
+			        	
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-9">
@@ -206,11 +205,17 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
 	<script>
 	var handler = StripeCheckout.configure({
-	  key: 'pk_test_GiSWrVvNWrr0wBHsaKe7DcJH',
+	  key: '[[${stripeKey}]]',
 	  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
 	  locale: 'auto',
 	  token: function(token) {
-		  alert("Thank you for purchasing credit, You will be contacted in 24 hours.");
+		  $.post( "/credits/payment", {'stripeToken': token.id, 'amount': $("#total_amount").val(), 'desc': 'Credit: ' + $("#product_credit").val()})
+		  .done(function(msg){ alert("Message : "+ token.card.name +", YOU WILL BE CONTACTED within 24HRS" ); })
+    	  .fail(function(xhr, status, error) {
+    		  alert("Error: " + error);
+	    });
+		  
+		  
 	    // You can access the token ID with `token.id`.
 	    // Get the token ID to your server-side code for use.
 	  }
