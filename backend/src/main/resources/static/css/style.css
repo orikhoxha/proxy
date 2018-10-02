@@ -461,6 +461,11 @@ ul {
     margin: auto;
 }
 
+.credit-content .credit-img.selected img{
+    margin: auto;
+    border: solid 2px #ffffff;
+}
+
 
 .img-fluid {
     max-width: 227.3px;
