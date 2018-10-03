@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="text-right">
-                                            <p class="subtotal">0 Credit</p>
+                                            <p class="subtotal">$00.00 USD</p>
                                         </div>
                                     </div>
                                 </div>
@@ -211,14 +211,7 @@
 	  token: function(token) {
 		  $.post( "/credits/payment", {'stripeToken': token.id, 'amount': $("#total_amount").val(), 'desc': 'Credit: ' + $("#product_credit").val()})
 		  .done(function(msg){ 
-			  swal({
-		            title: "Payment Successfull!",
-		            text: token.card.name +"\n YOU WILL BE CONTACTED within 24HRS",
-		            type: "success"
-		        }).then(function() {
-		            window.location.href = "/";
-		        });
-			  
+			  swal("Payment Successfull!", token.card.name +"\n YOU WILL BE CONTACTED within 24HRS", "success");
 		  	})
     	  .fail(function(xhr, status, error) {
 			  swal("Error!", error, "error");
@@ -232,10 +225,6 @@
 
 
 	document.getElementById("purchaseButton").addEventListener("click", function() {
-		if($("#total_amount").val() <= 0){
-			  swal("Error!", "No credit selected", "error");
-			  return;
-		}
 		handler.open({
 			    name: 'Proxy Backend',
 			    description: 'Credit: ' + $("#product_credit").val(),
