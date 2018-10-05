@@ -72,44 +72,19 @@ $(document).ready(function(){
         // Image click update price
         credits.click(function(){
             var clicked = $(this);
-            var credit = clicked.data("credit");
-            
-            if(prices.indexOf(credit + '') === -1){
+            var credit = clicked.attr("data-credit");
+            if(prices.indexOf(credit) === -1){
                 console.log("cheating");
                 return;
             }
-            
-            var parent = $(this).parent();
-            
-            if(parent.hasClass("selected")){
-            	parent.removeClass("selected");
-            }else{
-            	parent.addClass("selected");
-            }
-            
-            var totalCredits = getSelectedCredits();
-            $(".subtotal").html(totalCredits + ' Credits'); 
-            $(".total").html(pretifyNum(totalCredits/10));
-            $("#total_amount").val(totalCredits/10);
-            $("#product_credit").val(totalCredits);
+            $("#summaryImg").attr("src", clicked.attr("src")); 
+            $("#summaryImg").show(); 
+            $("#summaryCredit").html(credit + " Boosted Credits"); 
+            $(".subtotal").html(credit + ' Credits'); 
+            $(".total").html(pretifyNum(credit/10));
+            $("#total_amount").val(credit/10);
+            $("#product_credit").val(credit);
         });
-        
-        
-        
-        
-    }
-    
-    function getSelectedCredits(){
-    	var totalCredits = 0;
-    	var summary = $("#summary");
-    	var html = "";
-    	$('.credit-img.selected img').each(function(){
-    		var credit = $(this).data("credit");
-    		html += (credit+" Credits<br>")
-    		totalCredits += credit;
-        });
-    	summary.html("<p>"+ html + "</p>");
-    	return totalCredits;	
     }
     
     
