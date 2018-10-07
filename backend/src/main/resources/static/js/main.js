@@ -307,6 +307,7 @@ $(document).ready(function(){
 
         return false;
     });
+    $(".credit-img img[data-credit='250']").trigger("click");
 
 });
 
