@@ -77,8 +77,13 @@ $(document).ready(function(){
                 console.log("cheating");
                 return;
             }
-            $(".subtotal").html(pretifyNum(credit)); 
+            $("#summaryImg").attr("src", clicked.attr("src")); 
+            $("#summaryImg").show(); 
+            $("#summaryCredit").html(credit + " Boosted Credits"); 
+            $(".subtotal").html(credit + ' Credits'); 
             $(".total").html(pretifyNum(credit/10));
+            $("#total_amount").val(credit/10);
+            $("#product_credit").val(credit);
         });
     }
     
@@ -302,6 +307,7 @@ $(document).ready(function(){
 
         return false;
     });
+    $(".credit-img img[data-credit='250']").trigger("click");
 
 });
 
